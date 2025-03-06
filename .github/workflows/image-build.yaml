@@ -36,7 +36,7 @@ jobs:
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
           mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=${VERSION}
       - name: Publish package
-        run: mvn --batch-mode deploy -DskipTests=true
+        run: mvn --batch-mode -DdeployAtEnd=true deploy -DskipTests=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: create new snapshot version on release
