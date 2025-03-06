@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "TAG=${{ env.tag }}" >> $GITHUB_ENV
           echo "VERSION=${TAG#v}" >> $GITHUB_ENV
-          echo ${VERSION}
+          echo "hehrhereljlasdfj-${VERSION}"
           mvn org.eclipse.tycho:tycho-versions-plugin:set-version -DnewVersion=${VERSION}
       - name: Publish package
         run: mvn --batch-mode -DdeployAtEnd=true deploy -DskipTests=true
