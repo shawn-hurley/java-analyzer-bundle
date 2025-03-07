@@ -34,6 +34,7 @@ jobs:
         run: |
           echo "TAG=${{ env.tag }}" >> $GITHUB_ENV
           export VERSION=$(echo "$TAG" | sed 's/^.//')
+          echo $VERSION
           echo $VERSION >> $GITHUB_ENV
 
           echo "hehrhereljlasdfj-${VERSION}"
